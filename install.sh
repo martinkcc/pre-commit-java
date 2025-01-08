@@ -5,5 +5,4 @@ PMD=$(echo "$PMD_RELEASE" | tr -d '\r')
 echo "$PMD"
 apt-get update && apt-get install --no-install-recommends -y ca-certificates wget unzip curl bash jq
 cd /opt | tr -d '/r'
-wget -nc -O "$PMD" | tr -d '\r > pmd.zip && unzip pmd.zip && rm pmd.zip && mv pmd-bin* pmd && chmod -R +x pmd
-
+wget -nc -O pmd.zip "$PMD_RELEASE" && unzip pmd.zip && rm pmd.zip && mv pmd-bin* pmd && chmod -R +x pmd
