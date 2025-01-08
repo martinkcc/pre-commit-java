@@ -3,5 +3,5 @@ PMD_RELEASE="https://github.com/pmd/pmd/releases/download/pmd_releases/7.9.0/pmd
 CHECKSTYLE_RELEASE="https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.21.1/checkstyle-10.21.1-all.jar"
 apt-get update && apt-get install --no-install-recommends -y ca-certificates wget unzip curl bash jq
 cd /opt | tr -d '\r
-wget -nc -O pmd.zip "$PMD_RELEASE" | tr -d '\r && unzip pmd.zip && rm pmd.zip && mv pmd-bin* pmd && chmod -R +x pmd
-wget -nc -O checkstyle.jar "$CHECKSTYLE_RELEASE" | tr -d '\r
+wget -nc -O "$PMD_RELEASE" | tr -d '\r > pmd.zip && unzip pmd.zip && rm pmd.zip && mv pmd-bin* pmd && chmod -R +x pmd
+wget -nc -O "$CHECKSTYLE_RELEASE" | tr -d '\r > checkstyle.jar
