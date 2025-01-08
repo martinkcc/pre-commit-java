@@ -9,10 +9,6 @@ apt-get update && apt-get install --no-install-recommends -y ca-certificates wge
 
 cd /opt
 
-wget -nc -O pmd.zip "$PMD_RELEASE" \
-  && unzip pmd.zip \
-  && rm pmd.zip \
-  && mv pmd-bin* pmd \
-  && chmod -R +x pmd
+wget -nc -O pmd.zip "$PMD_RELEASE" && unzip pmd.zip && rm pmd.zip && mv pmd-bin* pmd && chmod -R +x pmd
 
 wget -nc -O checkstyle.jar "$CHECKSTYLE_RELEASE"
