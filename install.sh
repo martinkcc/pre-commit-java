@@ -1,7 +1,7 @@
 #!/bin/bash
-PMD_RELEASE="https://github.com/pmd/pmd/releases/download/pmd_releases/7.9.0/pmd-dist-7.9.0-bin.zip" | tr -d '\r'
-CHECKSTYLE_RELEASE="https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.21.1/checkstyle-10.21.1-all.jar" | tr -d '\r'
+PMD_RELEASE="https://github.com/pmd/pmd/releases/download/pmd_releases/7.9.0/pmd-dist-7.9.0-bin.zip" | tr -d '%0D'
+CHECKSTYLE_RELEASE="https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.21.1/checkstyle-10.21.1-all.jar" | tr -d '%0D'
 apt-get update && apt-get install --no-install-recommends -y ca-certificates wget unzip curl bash jq
-cd /opt | tr -d '\r
+cd /opt | tr -d '%0D'
 wget -nc -O "$PMD_RELEASE" | tr -d '\r > pmd.zip && unzip pmd.zip && rm pmd.zip && mv pmd-bin* pmd && chmod -R +x pmd
 wget -nc -O "$CHECKSTYLE_RELEASE" | tr -d '\r > checkstyle.jar
